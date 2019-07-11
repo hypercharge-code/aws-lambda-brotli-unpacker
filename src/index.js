@@ -10,13 +10,13 @@ const zlib = require('zlib');
  * @return {Promise<String>} Path to unpacked binary, equals to outputBin
  * @see https://github.com/alixaxel/chrome-aws-lambda
  */
-module.exports.unpack = function({ inputPath, outputPath }) {
+module.exports.unpack = function({ inputPath, outputPath: binOutputPath }) {
   return new Promise((resolve, reject) => {
     let input = path.resolve(inputPath);
-    let output = outputPath;
+    let bin = binOutputPath;
 
-    if (fs.existsSync(output) === true) {
-      return resolve(output);
+    if (fs.existsSync(bin) === true) {
+      return resolve(bin);
     }
 
     const source = fs.createReadStream(input);
@@ -31,12 +31,12 @@ module.exports.unpack = function({ inputPath, outputPath }) {
     });
 
     target.on('finish', () => {
-      fs.chmod(output, '0755', error => {
+      fs.chmod(bin, '0755', error => {
         if (error) {
           return reject(error);
         }
 
-        return resolve(output);
+        return resolve(bin);
       });
     });
 

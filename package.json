@@ -1,6 +1,6 @@
 {
   "name": "@hypercharge/aws-lambda-brotli-unpacker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Unpacks large Lambda binaries to /tmp",
   "license": "MIT",
   "repository": "hypercharge-code/aws-lambda-brotli-unpacker",

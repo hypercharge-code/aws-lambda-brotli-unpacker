@@ -1,6 +1,20 @@
-.idea/
-node_modules/
+# Node stuff
+**/node_modules/
 *.log
+npm-debug.log*
+.npm
+.node_repl_history
+.env
+**/coverage/*
+.cache-loader
+
+# IntelliJ stuff
+*.iml
+.idea/
+
+# Build output
+**/dist/
+**/build/
+
+# OSX
 .DS_Store
-yarn.lock
-*.tar.gz

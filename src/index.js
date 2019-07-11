@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const tar = require('tar-fs');
+const zlib = require('zlib');
 
 /**
  * Unpacks brotli archive of a .tar file to /tmp folder
@@ -9,7 +10,7 @@ const tar = require('tar-fs');
  * @return {Promise<String>} Path to unpacked binary, equals to outputBin
  * @see https://github.com/alixaxel/chrome-aws-lambda
  */
-module.exports.unpack = function({inputPath, outputPath}) {
+module.exports.unpack = function({ inputPath, outputPath }) {
   return new Promise((resolve, reject) => {
     let input = path.resolve(inputPath);
     let output = outputPath;
@@ -39,6 +40,6 @@ module.exports.unpack = function({inputPath, outputPath}) {
       });
     });
 
-    source.pipe(require(`${__dirname}/iltorb`).decompressStream()).pipe(target);
+    source.pipe(zlib.createBrotliDecompress()).pipe(target);
   });
 };

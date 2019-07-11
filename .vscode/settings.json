@@ -1,0 +1,14 @@
+{
+  "breadcrumbs.enabled": true,
+  "files.autoSave": "onFocusChange",
+  "editor.detectIndentation": true,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "html.format.endWithNewline": true,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.revealIfOpen": false,
+  "explorer.autoReveal": false
+}

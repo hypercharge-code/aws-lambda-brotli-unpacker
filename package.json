@@ -1,19 +1,17 @@
 {
-  "name": "@shelf/aws-lambda-brotli-unpacker",
-  "version": "0.0.2",
+  "name": "@hypercharge/aws-lambda-brotli-unpacker",
+  "version": "0.0.1",
   "description": "Unpacks large Lambda binaries to /tmp",
   "license": "MIT",
-  "repository": "shelfio/aws-lambda-brotli-unpacker",
+  "repository": "hypercharge-code/aws-lambda-brotli-unpacker",
   "author": {
-    "name": "Vlad Holubiev",
-    "email": "vlad@shelf.io",
-    "url": "shelf.io"
+    "name": "Hypercharge Team",
+    "email": "devs@hypercharge.io"
   },
   "engines": {
-    "node": ">=8.10"
+    "node": ">=10.16"
   },
   "scripts": {
-    "lint": "eslint . --fix",
     "test": "echo ok"
   },
   "files": [
@@ -28,31 +26,6 @@
     "tar-fs": "2.0.0"
   },
   "devDependencies": {
-    "@shelf/eslint-config": "0.3.5",
-    "eslint": "6.0.1",
-    "husky": "3.0.0",
-    "lint-staged": "9.0.2",
     "prettier": "1.18.2"
-  },
-  "optionalDependencies": {
-    "iltorb": "^2.2.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{html,json,md,yml}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

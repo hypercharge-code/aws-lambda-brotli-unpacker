@@ -4,12 +4,18 @@
 
 Inspired by [chrome-aws-lambda](https://github.com/alixaxel/chrome-aws-lambda)
 
-Used in projects: [aws-lambda-tesseract](https://github.com/shelfio/aws-lambda-tesseract)
+## Why fork original project?
+
+Node 10.16 introduced native brotli support. Original project targeted >=8.10 Node environments.
 
 ## Install
 
 ```
-$ yarn add @shelf/aws-lambda-brotli-unpacker
+$ yarn add @hypercharge/aws-lambda-brotli-unpacker
+```
+or
+```
+$ npm install @hypercharge/aws-lambda-brotli-unpacker
 ```
 
 ## Usage
@@ -34,7 +40,7 @@ A: This compression algorithm is known for great speed/size ration. Perfect for 
 ## Example
 
 ```js
-const {unpack} = require('@shelf/aws-lambda-brotli-unpacker');
+const {unpack} = require('@hypercharge/aws-lambda-brotli-unpacker');
 const {execSync} = require('child_process');
 
 const inputPath = path.join(__dirname, '..', 'bin', 'tt.tar.br'); // for example, tesseract
@@ -46,7 +52,3 @@ module.exports.handler = async event => {
   execSync(`${outputPath} -l eng image.png`);
 };
 ```
-
-## License
-
-MIT © [Shelf](https://shelf.io)
